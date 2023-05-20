@@ -11,12 +11,12 @@ orientation=`$xrandr_bin --verbose -q | grep LVDS | awk '{print $5}'`
 # Rotate the screen and stylus, eraser and cursor, according to your preferences.
 if [ "$orientation" = "normal" ]; then
 	$xrandr_bin -o right
-	$xsetwacom set $stylus_id Rotate 1
+	$xsetwacom_bin set $stylus_id Rotate 1
 elif [ "$orientation" = "right" ]; then
 	$xrandr_bin -o inverted
-	$xsetwacom set $stylus_id Rotate 3
+	$xsetwacom_bin set $stylus_id Rotate 3
 else 
 	$xrandr_bin -o normal
-	$xsetwacom set $stylus_id Rotate 0
+	$xsetwacom_bin set $stylus_id Rotate 0
 fi
 
